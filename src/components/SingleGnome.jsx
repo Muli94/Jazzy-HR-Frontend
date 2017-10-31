@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 
-export default class SingleGnome extends Component{
-    render(){
-        return(
-            <li></li>
-        )
-    }
+//stateless component
+function SingleGnome(props){
+    return(
+        <li>
+            <p>{props.gnome.name}</p>
+            <p>{props.gnome.age}</p>
+            <p>{props.gnome.strenght}</p>
+        </li>
+    )
 }
+
+export default SingleGnome
