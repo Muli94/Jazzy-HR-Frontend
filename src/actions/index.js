@@ -13,7 +13,6 @@ export function gnomesFetchDataSucces(gnomes){
 
 export function updateGnome(values, id){
     return function action(dispatch){
-
         fetch(`${ROOT_URL}/${id}`,{
             method: 'PATCH',
             body: JSON.stringify(values)
@@ -23,7 +22,7 @@ export function updateGnome(values, id){
             return response.json()
         })
         .then(data=>{
-            return dispatch(gnomesFetchDataSucces(data))
+            alert(`new data ${data}`)
         })
         .catch(err=>console.log(err))
     }

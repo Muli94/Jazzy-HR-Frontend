@@ -16,36 +16,44 @@ class EditGnome extends Component{
         )
     }
     onSubmit = (values) =>{
-        this.props.updateGnome(values)
+        this.props.updateGnome(values, this.props.id)
     }
     render(){
         const { handleSubmit } = this.props
         return(
-            <form action="" onSubmit={handleSubmit(this.onSubmit)}>
+            <form onSubmit={handleSubmit(this.onSubmit)}>
                 <Field 
-                    label='Name'
-                    name='name'
+                    label="Name"
+                    name="name"
                     component={this.renderField}
                 />
                 <Field 
-                    label='Age'
-                    name='age'
+                    label="Age"
+                    name="age"
                     component={this.renderField}
                 />
                 <Field 
-                    label='Strength'
-                    name='strength'
+                    label="Strength"
+                    name="strength"
                     component={this.renderField}
                 />
-                <button>Save</button>
-                <button>Cancel</button>
+                <button className="edit__button-save">Save</button>
+                <button className="edit__button-cancel">Cancel</button>
             </form>
         )
     }
 }
 
 function validate(){
+    if(!values.name){
 
+    }
+    if(!values.age){
+
+    }
+    if(!values.strength){
+        
+    }
 }
 
 export default reduxForm({

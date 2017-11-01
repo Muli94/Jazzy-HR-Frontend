@@ -5,24 +5,27 @@ export default function Header(){
     return(
             <header className="container">
                 <nav>
-                    <ul>
-                        <li>
-                            <img src="../../assets/logo.png" alt="logo"/>
+                    <ul className="main__navigation">
+                        <li className="logo">
+                            <img 
+                                src="../../assets/logo.png" 
+                                alt="logo"
+                            />
                         </li>
-                        <li>
+                        <li className="">
                             Gnomes
                         </li>
-                        <li>
+                        <li className="">
                             Trolls
                         </li>
-                        <li>
+                        <li className="create__button">
                             Create Monster
                         </li>
-                        <li>
+                        <li className="user__pic">
                             <img src="" alt=""/>
                         </li>
-                        <li>
-                            <strong>Robert Labus</strong>
+                        <li className="user__info">
+                            <strong className="user__info-name">Robert Labus</strong>
                             <br />
                             game master
                         </li>

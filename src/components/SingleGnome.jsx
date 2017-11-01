@@ -10,22 +10,20 @@ export default class SingleGnome extends Component{
         }
     }
     handleGnomeClick = () =>{
-        if(this.state.render){
-            this.setState({
-                render:false
-            })
-        }
         this.setState({
             render:true
         })
     }
     render(){
         return(
-            <li onClick = {this.handleGnomeClick}>
-                <p>{this.props.gnome.name}</p>
-                <p>{this.props.gnome.age}</p>
-                <p>{this.props.gnome.strenght}</p>
-                {this.state.render && <EditGnome />}
+            <li 
+                onClick = {this.handleGnomeClick}
+                className="single__gnome"
+            >
+                <p className="gnome__text-name">{this.props.gnome.name}</p>
+                <p className="gnome__text-age">{this.props.gnome.age}</p>
+                <p className="gnome__text-strength">{this.props.gnome.strenght}</p>
+                {this.state.render ? <EditGnome id={this.props.gnome.id}/> : null}
             </li>
         )
     }
