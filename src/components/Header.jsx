@@ -3,34 +3,33 @@ import React, { Component } from 'react'
 //stateless component
 export default function Header(){
     return(
-            <header className="container">
-                <nav>
+            <header className="">
                     <ul className="main__navigation">
-                        <li className="logo">
+                        <li className="main__navigation-item logo">
                             <img 
                                 src="../../assets/logo.png" 
                                 alt="logo"
                             />
                         </li>
-                        <li className="">
+                        <li className="main__navigation-item monster_nav">
                             Gnomes
                         </li>
-                        <li className="">
+                        <li className="main__navigation-item monster_nav">
                             Trolls
                         </li>
-                        <li className="create__button">
+                        <li className="main__navigation-item create__button">
                             Create Monster
                         </li>
-                        <li className="user__pic">
-                            <img src="" alt=""/>
-                        </li>
-                        <li className="user__info">
-                            <strong className="user__info-name">Robert Labus</strong>
-                            <br />
-                            game master
+                        <li className="main__navigation-item user__info">
+                            <img src="../../assets/avatar.png" alt="user_pic"/>
+                            <strong className="user__info-name">
+                                Robert Labus
+                            </strong>
+                            <p>
+                                game master
+                            </p>
                         </li>
                     </ul>
-                </nav>
             </header>
     )
 }

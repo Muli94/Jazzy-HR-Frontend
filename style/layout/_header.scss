@@ -1,0 +1,30 @@
+.main__navigation{
+    list-style-type: none;
+    display:flex;
+    margin:1em 0;
+    &-item{
+        display: flex;
+        align-items: center;
+        margin-right: 1em;
+    }
+}
+.logo{
+    width:20%;
+}
+.monster_nav{
+    width:10%;
+    &:nth-of-type(3){
+        width:30%;
+    }
+}
+.user{
+    &__info{
+        align-self: flex-end;
+    }
+}
+.create__button{
+    background: #AF0075;
+    color:white;
+    border-radius: 5px;
+    padding:0 1em;
+}

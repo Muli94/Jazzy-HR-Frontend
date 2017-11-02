@@ -25,7 +25,9 @@ class GnomeList extends Component{
     render(){
         return(
             <div className="gnome__list-wrapper">
-                <h1 className="list__title">Gnomes</h1>
+                <h1 className="list__title">
+                    Gnomes
+                </h1>
                 <ul className="gnome__list">
                     {this.props.gnomes.map(oneGnome=>{
                         return <SingleGnome gnome={oneGnome} key={oneGnome.id} />
@@ -42,7 +44,7 @@ class GnomeList extends Component{
     }
 }
 
-function mapStateToProps({ gnomes }){
+const mapStateToProps=({gnomes})=>{
     return {
         gnomes,
     }

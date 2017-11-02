@@ -4,13 +4,13 @@ import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
 class EditGnome extends Component{
-    renderField(field){
+    renderField({ label, type, input, value }){
         return(
             <div>
-                <label htmlFor="">{field.label}</label>
+                <label>{label}</label>
                 <input 
-                    type="text"
-                    {...field.input}
+                    type={type}
+                    {...input}
                 />
             </div>
         )
@@ -18,33 +18,44 @@ class EditGnome extends Component{
     onSubmit = (values) =>{
         this.props.updateGnome(values, this.props.id)
     }
+    handleCancelButton = () =>{
+        this.props.onGnomeClick(false)
+    }
     render(){
+        const { gnome:{ name, age, strenght }} = this.props
         const { handleSubmit } = this.props
         return(
             <form onSubmit={handleSubmit(this.onSubmit)}>
                 <Field 
                     label="Name"
                     name="name"
+                    type="text"
                     component={this.renderField}
                 />
                 <Field 
                     label="Age"
                     name="age"
+                    type="number"
                     component={this.renderField}
                 />
                 <Field 
                     label="Strength"
                     name="strength"
+                    type="number"
                     component={this.renderField}
                 />
-                <button className="edit__button-save">Save</button>
-                <button className="edit__button-cancel">Cancel</button>
+                <button type="submit" className="edit__button-save">
+                    Save
+                </button>
+                <button type="button" className="edit__button-cancel" onClick={this.handleCancelButton}>
+                    Cancel
+                </button>
             </form>
         )
     }
 }
 
-function validate(){
+function validate(values){
     if(!values.name){
 
     }
