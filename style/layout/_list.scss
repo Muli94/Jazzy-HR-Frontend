@@ -1,6 +1,62 @@
 .gnome__list{
     list-style: none;
-    &-gnome{
-        display: inline-block;
+    &-wrapper{
+        width:100%;
+        background: rgb(240, 239, 239);
+        padding-top:80px;
     }
+    &-single{
+        border-bottom:1px solid rgb(240, 239, 239);
+        padding:10px 10px;
+        background: white;
+    }
+    &-content{
+        display: flex;
+    }
+    &-info__wrapper{
+        align-self:center;
+        flex:1;
+        margin-left:20px;
+    }
+    &-bar{
+        width:250px;
+        height:10px;
+        background: rgb(240, 239, 239);
+        border-radius:10px;
+        align-self:center;
+        position:relative;
+        &-helper{
+            position:absolute;
+            left:0;
+            height:10px;
+            border-radius:8px;
+            &.darker{
+                background: #AF0075;
+                width:20px;
+                z-index:2;
+            }
+            &.bright{
+                background: #D8A6CB;
+                width:30px;
+                z-index:1;
+            }
+        }
+    }
+    &-strength__text{
+        align-self: center;
+        margin-left:10px;
+        width:130px;
+        text-align:right;
+    }
+    &-name__text{
+        font-weight: 700;
+    }
+}
+.list__title{
+    margin-bottom:40px;
+    font-weight:500;
+}
+.edit__gnome-form{
+    display:flex;
+    justify-content:center;
 }

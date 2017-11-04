@@ -18,13 +18,18 @@
     }
 }
 .user{
-    &__info{
-        align-self: flex-end;
+    &__pic{
+        margin-left:2em;
     }
-}
-.create__button{
-    background: #AF0075;
-    color:white;
-    border-radius: 5px;
-    padding:0 1em;
+    &__info{
+        display:flex;
+        flex-direction:column;
+        align-items: flex-start;
+        &-name{
+            font-weight:800;
+        }
+        p{
+            text-align: left;
+        }
+    }
 }

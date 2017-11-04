@@ -1,0 +1,34 @@
+.load__button{
+    background:#AF0075;
+    text-align:center;
+    font-weight:700;
+    padding:20px;
+    color:white;
+    border-radius:20px;
+    width:200px;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+.create__button{
+    background: #AF0075;
+    color:white;
+    border-radius: 5px;
+    font-weight:600;
+    text-align:center;
+    padding:0 10px;
+}
+.edit__button{
+    padding:10px;
+    border-radius:5px;
+    font-weight:700;
+    margin-top:10px;
+    color:white;
+    &.button__save{
+        background:#AF0075;
+        margin-right:1em;
+        
+    }
+    &.button__cancel{
+        background: grey;
+    }
+}

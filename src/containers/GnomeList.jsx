@@ -25,20 +25,22 @@ class GnomeList extends Component{
     render(){
         return(
             <div className="gnome__list-wrapper">
-                <h1 className="list__title">
-                    Gnomes
-                </h1>
-                <ul className="gnome__list">
-                    {this.props.gnomes.map(oneGnome=>{
-                        return <SingleGnome gnome={oneGnome} key={oneGnome.id} />
-                    })}
-                    <div 
-                        onClick={this.handleLoadMoreClick}
-                        className="load__button"
-                    >
-                        Load more
-                    </div>
-                </ul>
+                <div className="container">
+                    <h1 className="list__title">
+                        Gnomes
+                    </h1>
+                    <ul className="gnome__list">
+                        {this.props.gnomes.map(oneGnome=>{
+                            return <SingleGnome gnome={oneGnome} key={oneGnome.id} /> 
+                        })}
+                        <div 
+                            onClick={this.handleLoadMoreClick}
+                            className="load__button"
+                        >
+                            Load more
+                        </div>
+                    </ul>
+                </div>
             </div>
         )
     }

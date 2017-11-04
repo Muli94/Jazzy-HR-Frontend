@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 //stateless component
 export default function Header(){
     return(
-            <header className="">
+            <header className="container">
                     <ul className="main__navigation">
                         <li className="main__navigation-item logo">
                             <img 
@@ -20,13 +20,15 @@ export default function Header(){
                         <li className="main__navigation-item create__button">
                             Create Monster
                         </li>
-                        <li className="main__navigation-item user__info">
+                        <li className="main__navigation-item user__pic">
                             <img src="../../assets/avatar.png" alt="user_pic"/>
-                            <strong className="user__info-name">
+                        </li>
+                        <li className="main__navigation-item user__info">
+                            <p className="user__info-name">
                                 Robert Labus
-                            </strong>
+                            </p>
                             <p>
-                                game master
+                                Game Master
                             </p>
                         </li>
                     </ul>

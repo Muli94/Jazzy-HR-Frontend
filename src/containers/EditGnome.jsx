@@ -7,7 +7,9 @@ class EditGnome extends Component{
     renderField({ label, type, input, value }){
         return(
             <div>
-                <label>{label}</label>
+                <label className="edit__gnome-label">
+                    {label}
+                </label>
                 <input 
                     type={type}
                     {...input}
@@ -44,10 +46,10 @@ class EditGnome extends Component{
                     type="number"
                     component={this.renderField}
                 />
-                <button type="submit" className="edit__button-save">
+                <button type="submit" className="edit__button button__save">
                     Save
                 </button>
-                <button type="button" className="edit__button-cancel" onClick={this.handleCancelButton}>
+                <button type="button" className="edit__button button__cancel" onClick={this.handleCancelButton}>
                     Cancel
                 </button>
             </form>
