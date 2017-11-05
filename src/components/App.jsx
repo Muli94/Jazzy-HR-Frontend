@@ -1,14 +1,12 @@
-import React, { Component } from 'react'
-import Header from './Header.jsx'
-import GnomeList from './../containers/GnomeList.jsx'
+import React from 'react';
+import Header from './Header';
+import GnomeList from './../containers/GnomeList';
 
-export default class App extends Component{
-    render(){
-        return(
-        <div>
-            <Header />
-            <GnomeList />
-        </div>
-        )
-    }
+export default function App() {
+  return (
+    <div>
+      <Header />
+      <GnomeList />
+    </div>
+  );
 }

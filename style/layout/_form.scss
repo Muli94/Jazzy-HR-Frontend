@@ -2,5 +2,13 @@
     &-label{
         width:100px;
         display:block;
+        float:left;
     }
+    &-input__wrapper{
+        margin-bottom:5px;
+    }
+}
+form{
+    border: 1px solid $main-color;
+    padding:1em;
 }
