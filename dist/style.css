@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', sans-serif; }
+
+button {
+  background: none;
+  border: 0;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible; }
+
+.main__navigation {
+  list-style-type: none;
+  display: flex;
+  margin: 1em 0; }
+  .main__navigation-item {
+    display: flex;
+    align-items: center;
+    margin-right: 1em; }
+
+.logo {
+  flex: 2; }
+
+.monster_nav {
+  flex: 1; }
+  .monster_nav:nth-of-type(3) {
+    flex: 3; }
+
+.user__pic {
+  margin-left: 2em; }
+
+.user__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 7em; }
+  .user__info-name {
+    font-weight: 700; }
+  .user__info p {
+    text-align: left; }
+
+.gnome__list {
+  list-style: none; }
+  .gnome__list-wrapper {
+    width: 100%;
+    background: #f0efef;
+    padding-top: 80px; }
+  .gnome__list-single {
+    border-bottom: 1px solid #f0efef;
+    padding: 10px 10px;
+    background: white;
+    cursor: default; }
+    .gnome__list-single:hover .gnome__list-name__text {
+      color: #AF0075; }
+  .gnome__list-content {
+    display: flex; }
+    .gnome__list-content img {
+      width: 60px;
+      height: 60px; }
+  .gnome__list-info__wrapper {
+    align-self: center;
+    flex: 1;
+    margin-left: 20px; }
+  .gnome__list-bar {
+    width: 250px;
+    height: 10px;
+    background: #f0efef;
+    border-radius: 10px;
+    align-self: center;
+    position: relative; }
+    .gnome__list-bar-helper {
+      position: absolute;
+      left: 0;
+      height: 10px;
+      border-radius: 8px; }
+      .gnome__list-bar-helper.darker {
+        background: #AF0075;
+        z-index: 2; }
+      .gnome__list-bar-helper.bright {
+        background: #D8A6CB;
+        z-index: 1; }
+  .gnome__list-strength__text {
+    align-self: center;
+    margin-left: 10px;
+    width: 130px;
+    text-align: right; }
+    .gnome__list-strength__text strong {
+      margin-left: 5px; }
+  .gnome__list-name__text {
+    font-weight: 600; }
+
+.list__title {
+  margin-bottom: 40px;
+  font-weight: 500; }
+
+.edit__gnome-form {
+  display: flex;
+  justify-content: center; }
+
+.load__button {
+  background: #AF0075;
+  text-align: center;
+  padding: 10px;
+  margin: 2% 40%;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer; }
+  .load__button:hover {
+    background: grey; }
+
+.create__button {
+  background: #AF0075;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer; }
+  .create__button:hover {
+    background: grey; }
+
+.edit__button {
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: white; }
+  .edit__button.button__save {
+    background: #AF0075;
+    margin-right: 1em; }
+    .edit__button.button__save:hover {
+      background: grey; }
+  .edit__button.button__cancel {
+    background: #522f2f; }
+    .edit__button.button__cancel:hover {
+      background: grey; }
+
+.edit__gnome-label {
+  width: 100px;
+  display: block;
+  float: left; }
+
+.edit__gnome-input__wrapper {
+  margin-bottom: 5px; }
+
+form {
+  border: 1px solid #AF0075;
+  padding: 1em; }
+
+.container {
+  width: 80%;
+  margin: 0 auto; }

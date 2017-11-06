@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { updateGnome } from '../actions';
 
-const propTypes={
+const propTypes = {
   updateGnome: PropTypes.func.isRequired,
   onGnomeClick: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
@@ -12,12 +12,26 @@ const propTypes={
     id: PropTypes.number,
     name: PropTypes.string,
     age: PropTypes.number,
-    strenght: PropTypes.number
-  })
-}
+    strenght: PropTypes.number,
+  }).isRequired,
+};
 
 class EditGnome extends Component {
     onSubmit = (values) => {
+      const {
+        gnome: {
+          name, age, strenght, id,
+        },
+      } = this.props;
+      if (!values.name) {
+        values.name = name;
+      }
+      if (!values.age) {
+        values.age = age;
+      }
+      if (!values.strenght) {
+        values.strenght = strenght;
+      }
       this.props.updateGnome(values, id);
     }
     handleCancelButton = () => {
@@ -43,7 +57,7 @@ class EditGnome extends Component {
       );
     }
     render() {
-      const { gnome:{id}, handleSubmit } = this.props;
+      const { handleSubmit } = this.props;
       return (
         <form onSubmit={handleSubmit(this.onSubmit)}>
           <Field
@@ -59,8 +73,8 @@ class EditGnome extends Component {
             component={this.renderField}
           />
           <Field
-            label="Strength"
-            name="strength"
+            label="Strenght"
+            name="strenght"
             type="number"
             component={this.renderField}
           />
@@ -82,18 +96,8 @@ class EditGnome extends Component {
     }
 }
 
-function validate(values) {
-  if (!values.name) {
-  }
-  if (!values.age) {
-  }
-  if (!values.strength) {
-  }
-}
-
 EditGnome.propTypes = propTypes;
 
 export default reduxForm({
-  validate,
   form: 'EditGnome',
 })(connect(null, { updateGnome })(EditGnome));

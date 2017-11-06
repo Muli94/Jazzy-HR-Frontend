@@ -7,7 +7,7 @@ export default function Header() {
       <ul className="main__navigation">
         <li className="main__navigation-item logo">
           <img
-            src="../../assets/logo.png"
+            src="./assets/logo.png"
             alt="logo"
           />
         </li>
@@ -23,7 +23,7 @@ export default function Header() {
           </p>
         </li>
         <li className="main__navigation-item user__pic">
-          <img src="../../assets/avatar.png" alt="user" />
+          <img src="./assets/avatar.png" alt="user" />
         </li>
         <li className="main__navigation-item user__info">
           <p className="user__info-name">

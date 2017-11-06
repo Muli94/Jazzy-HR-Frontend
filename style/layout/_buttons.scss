@@ -1,34 +1,45 @@
 .load__button{
-    background:#AF0075;
+    background:$main-color;
     text-align:center;
-    padding:20px;
-    color:white;
+    padding:10px;
+    margin:2% 40%;
+    color:$button-font-color;
     border-radius:20px;
-    width:200px;
-    letter-spacing: 3px;
     cursor: pointer;
+    &:hover{
+        background: $hover-color;
+    }
 }
 .create__button{
-    background: #AF0075;
-    color:white;
+    background: $main-color;
+    color:$button-font-color;
     border-radius: 5px;
     font-weight:600;
     min-width:150px;
     display:flex;
     justify-content: center;
+    cursor: pointer;
+    &:hover{
+        background: $hover-color;
+    }
 }
 .edit__button{
     padding:10px;
     border-radius:5px;
     font-weight:700;
     margin-top:10px;
-    color:white;
+    color:$button-font-color;
     &.button__save{
-        background:#AF0075;
+        background:$main-color;
         margin-right:1em;
-        
+        &:hover{
+            background:$hover-color; 
+        }
     }
     &.button__cancel{
-        background: grey;
+        background: rgb(82, 47, 47);
+        &:hover{
+            background: $hover-color;
+        }
     }
 }

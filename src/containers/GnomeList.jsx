@@ -11,13 +11,13 @@ const propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     age: PropTypes.number,
-    strenght: PropTypes.number
-  })).isRequired,
+    strenght: PropTypes.number,
+  })),
 };
 
 const defaultProps = {
-  gnomes: []
-}
+  gnomes: [],
+};
 
 class GnomeList extends Component {
   constructor(props) {
@@ -50,15 +50,15 @@ class GnomeList extends Component {
                   gnome={oneGnome}
                   key={oneGnome.id}
                 />))}
-              <div
-                onClick={this.handleLoadMoreClick}
-                className="load__button"
-                role="button"
-                tabIndex="-1"
-              >
-                            Load more
-              </div>
             </ul>
+            <div
+              onClick={this.handleLoadMoreClick}
+              className="load__button"
+              role="button"
+              tabIndex="-1"
+            >
+                          Load more
+            </div>
           </div>
         </div>
       );

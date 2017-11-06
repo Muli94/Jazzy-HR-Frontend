@@ -7,8 +7,8 @@ const propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
     age: PropTypes.number,
-    strenght: PropTypes.number
-  })
+    strenght: PropTypes.number,
+  }).isRequired,
 };
 
 class SingleGnome extends Component {
@@ -25,17 +25,14 @@ class SingleGnome extends Component {
       });
     }
     render() {
-      const { gnome } = this.props;
-      const {
-        name, age, strenght,
-      } = gnome;
+      const { gnome, gnome: { name, age, strenght } } = this.props;
       return (
         <li className="gnome__list-single">
           <div
             className="gnome__list-content"
             onClick={this.handleGnomeClick}
           >
-            <img src="../../assets/gnome_logo.png" alt="gnome" />
+            <img src="assets/gnome_logo.png" alt="gnome" />
             <div className="gnome__list-info__wrapper">
               <p className="gnome__list-name__text">
                 {name}
@@ -47,7 +44,7 @@ class SingleGnome extends Component {
             <div className="gnome__list-bar">
               <div
                 className="gnome__list-bar-helper darker"
-                style={{ width: strenght/2 }}
+                style={{ width: 250 * (strenght / 2) / 100 }}
               />
               <div
                 className="gnome__list-bar-helper bright"
