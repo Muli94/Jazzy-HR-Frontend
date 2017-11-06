@@ -2,14 +2,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSASS = new ExtractTextPlugin('./dist/style.css');
 
 module.exports = {
-    entry: [
-        './src/index.jsx',
-        './style/main.scss'
-    ],
+    entry: {
+        './dist/index.js': ['whatwg-fetch', './src/index.jsx'],
+        './dist/style.css': './style/main.scss'
+    },
     output:{
         path:__dirname,
         publicPath: '/',
-        filename: 'dist/index.js'
+        filename: '[name]'
     },
     module:{
         loaders:[{
