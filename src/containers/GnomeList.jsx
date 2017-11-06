@@ -27,9 +27,11 @@ class GnomeList extends Component {
     };
   }
     componentDidMount=() => {
+      // fetch gnomes
       this.props.fetchGnomes(this.state.limit);
     }
     handleLoadMoreClick = () => {
+      // on Load button click: set new limit value for fetch gnomes
       let nextLimit = this.state.limit;
       nextLimit += 50;
       this.props.fetchGnomes(nextLimit);
@@ -38,6 +40,7 @@ class GnomeList extends Component {
       });
     }
     render() {
+      const { gnomes } = this.props
       return (
         <div className="gnome__list-wrapper">
           <div className="container">
@@ -45,7 +48,7 @@ class GnomeList extends Component {
                         Gnomes
             </h1>
             <ul className="gnome__list">
-              {this.props.gnomes.map(oneGnome =>
+              {gnomes.map(oneGnome =>
                 (<SingleGnome
                   gnome={oneGnome}
                   key={oneGnome.id}

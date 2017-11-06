@@ -20,6 +20,7 @@ class SingleGnome extends Component {
     };
   }
     handleGnomeClick = (display = true) => {
+      // display edit form
       this.setState({
         display,
       });
@@ -61,7 +62,8 @@ class SingleGnome extends Component {
               <EditGnome
                 gnome={gnome}
                 onGnomeClick={this.handleGnomeClick}
-              /> : null}
+              /> 
+              : null}
           </div>
         </li>
       );

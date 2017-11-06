@@ -11,6 +11,8 @@ module.exports = {
         publicPath: '/',
         filename: '[name]'
     },
+    watch: true,
+    
     module:{
         loaders:[{
             test:/\.(js|jsx)$/, 

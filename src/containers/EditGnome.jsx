@@ -23,6 +23,7 @@ class EditGnome extends Component {
           name, age, strenght, id,
         },
       } = this.props;
+      // if user will submit empty input old value will be send
       if (!values.name) {
         values.name = name;
       }
@@ -35,6 +36,7 @@ class EditGnome extends Component {
       this.props.updateGnome(values, id);
     }
     handleCancelButton = () => {
+      // pass false to hide form
       this.props.onGnomeClick(false);
     }
     renderField({

@@ -8,8 +8,6 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import App from './components/App';
 
-// import './../style/main.scss'
-
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 render(
