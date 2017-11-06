@@ -23,7 +23,7 @@ class GnomeList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      limit: 15,
+      limit: 50,
     };
   }
     componentDidMount=() => {
@@ -31,7 +31,7 @@ class GnomeList extends Component {
     }
     handleLoadMoreClick = () => {
       let nextLimit = this.state.limit;
-      nextLimit += 15;
+      nextLimit += 50;
       this.props.fetchGnomes(nextLimit);
       this.setState({
         limit: nextLimit,

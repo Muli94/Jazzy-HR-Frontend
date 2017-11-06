@@ -34589,7 +34589,7 @@ var GnomeList = function (_Component) {
 
     _this.handleLoadMoreClick = function () {
       var nextLimit = _this.state.limit;
-      nextLimit += 15;
+      nextLimit += 50;
       _this.props.fetchGnomes(nextLimit);
       _this.setState({
         limit: nextLimit
@@ -34597,7 +34597,7 @@ var GnomeList = function (_Component) {
     };
 
     _this.state = {
-      limit: 15
+      limit: 50
     };
     return _this;
   }
@@ -34728,9 +34728,6 @@ var SingleGnome = function (_Component) {
           name = _props$gnome.name,
           age = _props$gnome.age,
           strenght = _props$gnome.strenght;
-      /*const {
-        name, age, strenght,
-      } = gnome;*/
 
       return _react2.default.createElement(
         'li',
