@@ -45,7 +45,6 @@ class EditGnome extends Component {
     renderField({
       label, type, input, name,
     }) {
-      
       return (
         <div className="edit__gnome-input__wrapper">
           <label
