@@ -35049,10 +35049,12 @@ var GnomeList = function (_Component) {
     var _this = _possibleConstructorReturn(this, (GnomeList.__proto__ || Object.getPrototypeOf(GnomeList)).call(this, props));
 
     _this.componentDidMount = function () {
+      // fetch gnomes
       _this.props.fetchGnomes(_this.state.limit);
     };
 
     _this.handleLoadMoreClick = function () {
+      // on Load button click: set new limit value for fetch gnomes
       var nextLimit = _this.state.limit;
       nextLimit += 50;
       _this.props.fetchGnomes(nextLimit);
@@ -35070,6 +35072,8 @@ var GnomeList = function (_Component) {
   _createClass(GnomeList, [{
     key: 'render',
     value: function render() {
+      var gnomes = this.props.gnomes;
+
       return _react2.default.createElement(
         'div',
         { className: 'gnome__list-wrapper' },
@@ -35084,7 +35088,7 @@ var GnomeList = function (_Component) {
           _react2.default.createElement(
             'ul',
             { className: 'gnome__list' },
-            this.props.gnomes.map(function (oneGnome) {
+            gnomes.map(function (oneGnome) {
               return _react2.default.createElement(_SingleGnome2.default, {
                 gnome: oneGnome,
                 key: oneGnome.id
@@ -35173,6 +35177,7 @@ var SingleGnome = function (_Component) {
     _this.handleGnomeClick = function () {
       var display = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
+      // display edit form
       _this.setState({
         display: display
       });
@@ -35325,11 +35330,15 @@ var EditGnome = function (_Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EditGnome.__proto__ || Object.getPrototypeOf(EditGnome)).call.apply(_ref, [this].concat(args))), _this), _this.onSubmit = function (values) {
-      var _this$props$gnome = _this.props.gnome,
+      var _this$props = _this.props,
+          _this$props$gnome = _this$props.gnome,
           name = _this$props$gnome.name,
           age = _this$props$gnome.age,
           strenght = _this$props$gnome.strenght,
-          id = _this$props$gnome.id;
+          id = _this$props$gnome.id,
+          updateGnome = _this$props.updateGnome,
+          onGnomeClick = _this$props.onGnomeClick;
+      // if user will submit empty input old value will be send
 
       if (!values.name) {
         values.name = name;
@@ -35340,8 +35349,10 @@ var EditGnome = function (_Component) {
       if (!values.strenght) {
         values.strenght = strenght;
       }
-      _this.props.updateGnome(values, id);
+      updateGnome(values, id);
+      onGnomeClick(false);
     }, _this.handleCancelButton = function () {
+      // pass false to hide form
       _this.props.onGnomeClick(false);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
@@ -35353,6 +35364,7 @@ var EditGnome = function (_Component) {
           type = _ref2.type,
           input = _ref2.input,
           name = _ref2.name;
+
 
       return _react2.default.createElement(
         'div',
@@ -35367,7 +35379,8 @@ var EditGnome = function (_Component) {
         ),
         _react2.default.createElement('input', _extends({
           id: '' + name,
-          type: type
+          type: type,
+          placeholder: 'Type new ' + label
         }, input))
       );
     }
