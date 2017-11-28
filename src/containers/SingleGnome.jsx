@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import EditGnome from './EditGnome';
+import gnomeLogo from '../../assets/gnome_logo.png';
 
 const propTypes = {
   gnome: PropTypes.shape({
@@ -33,7 +34,7 @@ class SingleGnome extends Component {
           className="gnome__list-content"
           onClick={this.handleGnomeClick}
         >
-          <img src="../../assets/gnome_logo.png" alt="gnome" />
+          <img src={gnomeLogo} alt="gnome" />
           <div className="gnome__list-info__wrapper">
             <p className="gnome__list-name__text">
               {name}

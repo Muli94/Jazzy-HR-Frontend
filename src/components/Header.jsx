@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from '../../assets/logo.png';
+import avatar from '../../assets/avatar.png';
 
 // stateless component
 export default function Header() {
@@ -6,10 +8,7 @@ export default function Header() {
     <header className="container">
       <ul className="main__navigation">
         <li className="main__navigation-item logo">
-          <img
-            src="../../assets/logo.png"
-            alt="logo"
-          />
+          <img src={logo} alt={"logo"} />
         </li>
         <li className="main__navigation-item monster_nav">
           Gnomes
@@ -23,7 +22,7 @@ export default function Header() {
           </p>
         </li>
         <li className="main__navigation-item user__pic">
-          <img src="../../assets/avatar.png" alt="user" />
+          <img src={avatar} alt="user" />
         </li>
         <li className="main__navigation-item user__info">
           <p className="user__info-name">

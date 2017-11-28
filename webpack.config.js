@@ -1,15 +1,21 @@
+const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractSASS = new ExtractTextPlugin('./dist/style.css');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const extractSASS = new ExtractTextPlugin({
+    filename: 'style.css'
+});
+const extractHTML = new HtmlWebpackPlugin({
+    template: 'index.html'
+});
 
 module.exports = {
-    entry: {
-        './dist/index.js': ['whatwg-fetch', './src/index.jsx'],
-        './dist/style.css': './style/main.scss'
-    },
+    entry: [
+        'whatwg-fetch', './src/index.jsx'
+    ],
     output:{
-        path:__dirname,
-        publicPath: '/',
-        filename: '[name]'
+        path: path.resolve(__dirname, 'dist'),
+        //publicPath: '/dist',
+        filename: 'index.js'
     },
     module:{
         loaders:[{
@@ -26,8 +32,11 @@ module.exports = {
                 use: ['css-loader', 'sass-loader']
             })
         },{
-            test: /\.(png|jpg)$/,
-            loader: 'url-loader?limit=100000',
+            test: /\.html$/,
+            use: ['html-loader']
+        },{
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            loader: 'file-loader?name=assets/[name].[ext]'
         }]
     },
     resolve:{
@@ -39,5 +48,6 @@ module.exports = {
     },
     plugins: [
         extractSASS,
+        extractHTML,
     ]
 }
