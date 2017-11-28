@@ -17,28 +17,30 @@ export function updateGnome(values, id) {
       method: 'PATCH',
       body: JSON.stringify(values),
     })
-      .then((response) => {
-        if (!response.ok) throw new Error();
-        return response.json();
-      })
-      .then((data) => {
-        alert(`new data: name: ${data.name}, age: ${data.age} strenght: ${data.strenght}`);
-      })
-      .catch(err => alert(`${err}. Please try again`));
+    .then((response) => {
+      if (!response.ok){
+        throw new Error();
+      }
+      return response.json();
+    })
+    .then((data) => {
+      alert(`new data: name: ${data.name}, age: ${data.age} strenght: ${data.strenght}`);
+    })
+    .catch(err => alert(`${err}. Please try again`));
   };
 }
-export function fetchGnomes(limit) {
+export function fetchGnomes(offset, limit=50) {
   return function action(dispatch) {
-    fetch(`${ROOT_URL}?_format=json&limit=${limit}&offset=0`, {
+    fetch(`${ROOT_URL}?_format=json&limit=${limit}&offset=${offset}`, {
       method: 'GET',
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('not working');
-        }
-        return response.json();
-      })
-      .then(data => dispatch(gnomesFetchDataSuccess(data)))
-      .catch(err => alert(err))
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('not working');
+      }
+      return response.json();
+    })
+    .then(data => dispatch(gnomesFetchDataSuccess(data)))
+    .catch(err => alert(err))
   }
 }
